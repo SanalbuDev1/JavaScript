@@ -7,14 +7,54 @@
 <body>
 
 	<style>
+		
+		@keyframes animre{
+			0%,100%{
+				background-color:  black;
+			}
+			25%{
+				background-color: #f0ad4e;
+				
+			}50%{
+				background-color: red;
+			}75%{
+				background-color: blue;
+			}80%{
+				background-color: green;
+			}
+		}
+		@keyframes animr{
+			0%,100%{
+				box-shadow: 2px 2px 100px black;
+			}
+			50%{
+				box-shadow: 0px 0px 100px #f0ad4e;
+				
+			}
+		}
+		 @keyframes animred{
+			0% 100%{
+				transform: scale(1.0);
+			}
+			50%{
+				transform: scale(1.5);
+				
+			}
+			
+		}
+		body{
+			-webkit-animation:  10s animre infinite;
+		}
 		main#calculadora{
 			background-color: #323232;
 			width: 477px;
-			height: 480px;
+			height: 520px;
 			margin:100px auto;
 			padding: 20px;
 			border-radius: 5px;
 			border:1px solid black;
+			-webkit-animation: 1s animr infinite;
+			
 		}
 		input.resultado{
 			display: block;
@@ -31,6 +71,7 @@
 			width: 430px;
 			height: 384px;
 			margin:30px;
+
 		}
 		button{
 			width: 91px;
@@ -43,29 +84,65 @@
 			color:white; 
 			font-size: 30px;
 			outline: red;
+			text-align: center;
+			
+		    border-right: 20px solid transparent;
+     		border-top: 20px solid transparent;
+   		  	border-left: 60px solid transparent;
+    		border-bottom: 50px solid #f0ad4e;
 		}
 		button:active{
 			background:#303132;
 			opacity: 0.5;
 		}
 		button#btn16{
-			height: 142px;
+			height: 152px;
 			position: absolute;
 		}
 		button#btn18{
-			width: 197px;
+			width: 200px;
 		}
 		input{
 			text-align: right;
 			font-size: 40px;
 		}
+		#hola{
+			display: block;
+			
+			width: 80%;
+			margin:auto;
+		}
+		#hola:hover{
+			-webkit-animation: 1s animred infinite;
+		}
+		p{
+			text-align: center;
+			width: 80%;
+			height: 20px;
+			background: black;
+			color:white;
+			margin: 70px 150px;
+			display: none;
+			position: absolute;
+			border-radius:20px;
+			-webkit-animation: 1s animred infinite;
+			
+			
+		}button:hover{
+			transform: scale(1.1);
+			box-shadow: inset 12px 12px red;
+			transition: 1s;
+		}
 
 
 
 	</style>
-	<main id="calculadora">
+	<button id="hola" >Clickeame Esto se descontrolara :v</button>
+	<p id="descontrol">Esto se descontrolo</p>
+	<main id="calculadora" class="hola">
 
 		<input id="display" class="resultado" type="text" readonly="readonly"></input>
+
 		<article class="botones">
 		<button id="btn1">C</button>
 		<button id="btn2">^2</button>
@@ -86,13 +163,25 @@
 		<button id="btn18">0</button>
 		<button id="btn19">.</button>
 		</article>
-		
+		<EMBED SRC="ms4.mp3" AUTOSTART=true LOOP=true VOLUME="80" WIDTH="0" HEIGHT="0">  
 	</main>
 	<script>
 		
 	var boton1=document.getElementById('btn1');
 	var boton2=document.getElementById('btn2');
 	var boton12=document.getElementById('btn12');
+	var boton8=document.getElementById('btn8');
+	var boton4=document.getElementById('btn4');
+	var hola=document.getElementById('hola');
+	var cal=document.getElementById('calculadora');
+	var p=document.getElementById('descontrol');
+
+
+
+
+
+
+
 
 
 	var boton2=document.getElementById('btn2');
@@ -107,12 +196,31 @@
 	var boton6=document.getElementById('btn6');
 	var boton7=document.getElementById('btn7');
 	var boton16=document.getElementById('btn16');
+	var boton19=document.getElementById('btn19');
+	var boton18=document.getElementById('btn18');
 
 
 
 
+	var num1=false;
+	var num2=0;
+	var num3=0;
 	
+	boton18.onclick=function(){
+		display.value +="0";
+	}
 
+	boton2.onclick=function(){
+		num1=true;
+		num2+=parseInt(display.value);
+		display.value+="";
+		display.value+="^";
+		num3=parseInt(display.value);
+
+	}
+	boton19.onclick=function(){
+		display.value +=".";
+	}
 	boton13.onclick = function(){
 		display.value +=1;
 	}
@@ -140,22 +248,55 @@
 	boton7.onclick = function(){
 		display.value +=9;
 	}
+	boton8.onclick = function(){
+		
+		display.value += "-";
+	}
 	boton1.onclick = function(){
 		display.value="";
 	}
+	boton3.onclick= function(){
+		display.value +="/";
+	}
+	boton4.onclick = function(){
+		display.value +="*";
+	}
 	boton12.onclick = function(){
-		var num1 = parseInt(display.value);
-		display.value="";
+		
 		display.value += '+';
+		
 
 	}
 	boton16.onclick= function(){
 
-		display.value=num1;	
+
+		
+
+		if(num1!=true){
+			display.value=eval(display.value);
+		}else{
+			
+			num2=num2^num3;
+			display.value=num2;
+		}
 		
 	}
-
-
+	var contador=0;
+	hola.onclick=function(){
+		contador +=1;
+		if(contador%2==0){
+			p.style.display="block";
+			cal.style.backgroundColor = "#f0ad4e";
+			
+		}else{
+			p.style.display="none";
+			cal.style.backgroundColor = "black";
+			
+			
+		}
+		
+		
+	}
 	</script>
 </body>
 </html>
