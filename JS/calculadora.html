@@ -32,6 +32,36 @@
 				
 			}
 		}
+
+		@keyframes animrr{
+			0%,{
+				transform: scale(1.0);
+				transform: rotate3d(0,0,2,0deg);
+			}
+			10%{
+				transform: scale(2.0);
+				background: url(imgs/ola1.gif);
+			}
+			20%{
+				transform: scale(1.7);
+				transform: rotate3d(45,45,0,45deg);
+				
+			}
+			40%{
+				transform: scale(1.7);
+				transform: rotate3d(-100,-270,2,95deg);
+			}
+			70%{
+				transform: scale(2.0);
+				
+			}
+			90%{
+				
+				transform: rotate3d(1,1,2,90deg);
+				background: url(imgs/ola.gif);
+				
+			}
+		}
 		 @keyframes animred{
 			0% 100%{
 				transform: scale(1.0);
@@ -164,7 +194,8 @@
 		<button id="btn18">0</button>
 		<button id="btn19">.</button>
 		</article>
-		<EMBED SRC="ms4.mp3" AUTOSTART=true LOOP=true VOLUME="80" WIDTH="0" HEIGHT="0">  
+		
+</video>
 	</main>
 	<script>
 		
@@ -285,13 +316,16 @@
 	var contador=0;
 	hola.onclick=function(){
 		contador +=1;
-		if(contador%2==0){
+		if(contador%2!=0){
 			p.style.display="block";
 			cal.style.backgroundColor = "#f0ad4e";
+			cal.style.animation = "7s animrr infinite";
+
 			
 		}else{
 			p.style.display="none";
-			cal.style.backgroundColor = "black";
+			cal.style.backgroundColor = "#f0ad4e";
+			cal.style.animation = "none";
 			
 			
 		}
