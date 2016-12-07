@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ciclos (for-in) JS</title>
+</head>
+<body>
+	</h1>Ciclos (for-in) JS</h1>
+	<hr>
+	<ul id="lista"></ul>
+
+	<script>
+		var lista = document.getElementById('lista');
+		var bicis = ['Santa Cruz', 
+					 'Yeti', 
+					 'Intense', 
+					 'Rocky Mountain', 
+					 'Specialized',
+					 'Trek',
+					 'Giant',
+					 'Devinci',
+					 'Scott'];
+
+		for(var bici in bicis){
+			lista.innerHTML += "<li>" + bici[bici] +"</li>";
+		}
+	</script>
+</body>
+</html>

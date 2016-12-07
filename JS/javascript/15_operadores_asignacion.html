@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Operadores Asignacion</title>
+	<style>
+		table{
+			border-collapse: collapse;
+			color: #777;
+			font: 16px Arial;
+			padding: 4px;
+			margin:100px auto;
+			width: 800px;
+			text-align: center;
+		}
+		table td, table th{
+			border: 1px dotted #ccc;
+			padding: 8px;
+		}
+		table th{
+			background-color: #999;
+			color: #fff;
+		}
+		table tr:nth-child(even){
+			background-color: #ddd;
+		}
+	</style>
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<td colspan="4">Operadores Asignacion</td>
+			</tr>
+			<tr>
+				<th>Operador</th>
+				<th>Ejemplo</th>
+				<th>Igual</th>
+				<th>Resultado</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>=</td>
+				<td>x=y</td>
+				<td>x=5</td>
+				<td id="rigual"></td>
+			</tr>
+			<tr>
+				<td>+=</td>
+				<td>x+=y</td>
+				<td>x=x+y</td>
+				<td id="rsuma"></td>
+			</tr>
+			<tr>
+				<td>-=</td>
+				<td>x-=y</td>
+				<td>x=x-y</td>
+				<td id="rresta"></td>
+			</tr>
+			<tr>
+				<td>*=</td>
+				<td>x*=y</td>
+				<td>x=x*y</td>
+				<td id="rmultiplicar"></td>
+			</tr>
+			<tr>
+				<td>/=</td>
+				<td>x/=y</td>
+				<td>x=x/y</td>
+				<td id="rdividir"></td>
+			</tr>
+			<tr>
+				<td>%=</td>
+				<td>x=%y</td>
+				<td>x=x%y</td>
+				<td id="rporcentual"></td>
+			</tr>
+		</tbody>
+	</table>
+	<script>
+		//variables
+		var y = 5;
+		var x =10;
+		var rigual = document.getElementById('rigual');
+		var rsuma = document.getElementById('rsuma');
+		var rresta = document.getElementById('rresta');
+		var rmultiplicar = document.getElementById('rmultiplicar');
+		var rdividir = document.getElementById('rdividir');
+		var rporcentual = document.getElementById('rporcentual');
+
+		//resultados
+		rigual.innerHTML = 'x= '+ y;
+		rsuma.innerHTML = 'x=' + (x+=y);
+		rresta.innerHTML = y;
+		y=5; x=10;
+		rmultiplicar.innerHTML = y*x;
+		rdividir.innerHTML = x/y;
+		rporcentual.innerHTML = x%y;
+
+
+	</script>
+</body>
+</html>

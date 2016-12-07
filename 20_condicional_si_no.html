@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Condiconal (SINO)</title>
+</head>
+<body>
+	<h1>Condiconal (SINO)</h1>
+	<hr>
+	<h2 id="saludo"></h2>
+
+	<script>
+		var saludo = document.getElementById('saludo');
+		var color = document.getElementById('color');
+
+		var respuesta = prompt('¿Cuantas estrellas hay en el techo?');
+		
+		if (respuesta == '5') {
+			saludo.innerHTML = 'Usted esta contando bien las estrellas'
+			color.style.backgroundColor ='purple';
+		}else{          
+			saludo.innerHTML = 'usted esta contando mal las estrellas'
+			color.style.backgroundColor = 'red';
+		}
+
+	</script>
+	
+</body>
+</html>

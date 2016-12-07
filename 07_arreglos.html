@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Arreglos Unidimensionales</title>
+</head>
+<body>
+	<h1>Arreglos Unidimensionales</h1>
+	<hr>
+	<ul id="lista1"></ul>
+	<ul id="lista2"></ul>
+	<ul id="lista3"></ul>
+	
+	<script>
+
+		var l1 = document.getElementById('lista1');
+		var l2 = document.getElementById('lista2');
+		var l3 = document.getElementById('lista3');
+
+		var frutas = new Array();
+		// Indices Manueales
+		frutas[0] = 'Papaya'
+		frutas[1] = 'Guanabana'
+		frutas[2] = 'Chirimolla'
+		frutas[3] = 'Borojo'
+
+		// Llenamos la lista 1
+		l1.innerHTML  = '<li>'+frutas[0]+'</li>';
+		l1.innerHTML += '<li>'+frutas[1]+'</li>';
+		l1.innerHTML += '<li>'+frutas[2]+'</li>';
+		l1.innerHTML += '<li>'+frutas[3]+'</li>';
+
+		// Forma condensada
+		// Indices Automaticos
+		var deportes = new Array('Futbol', 'Balocesto', 'Tennis');
+
+		// Llenamos la lista 2
+		l2.innerHTML  = '<li>'+deportes[0]+'</li>';
+		l2.innerHTML += '<li>'+deportes[1]+'</li>';
+		l2.innerHTML += '<li>'+deportes[2]+'</li>';
+
+
+		// Forma Literal
+		var cuidades = ['Manizales', 'Pereira', 'Armenia'];
+
+		// Llenamos la lista 3
+		l3.innerHTML  = '<li>'+cuidades[0]+'</li>';
+		l3.innerHTML += '<li>'+cuidades[1]+'</li>';
+		l3.innerHTML += '<li>'+cuidades[2]+'</li>';
+
+	</script>
+</body>
+</html>
+	
+</head>
+<body>
+	
+</body>
+</html>
