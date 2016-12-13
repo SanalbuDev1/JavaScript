@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>	</title>
+</head>
+<body>
+	<h1>Metodos Matematicos JS</h1>
+	<hr>	
+
+	<input type="number" placeholder="numero" id="num">
+	<button id="reg">Registrar</button>
+	<ul id="lista">	</ul>
+
+	<input type="number" id="num1">
+	<input type="number" id="num2">
+	<input type="number" id="num3">
+	<input type="number" id="num4">
+
+	<button id="reg1">Calcular el mayor</button>
+	<button id="reg2">Calcular el menor</button>
+	mostrar:
+	<output id="salida">	</output>
+	<br>
+	<br>		
+	<input type="number" id="mayor">
+	mayor: 
+	<output id="registrar"></output>
+	menor:
+	<output id="registrar3">	</output>
+
+	<button id="registrar1">Registrar</button>
+
+	
+
+	<script>	
+
+	var reg= document.getElementById('reg');
+	var lista = document.getElementById('lista');
+	var reg1 = document.getElementById('reg1');
+	var reg2 = document.getElementById('reg2');
+	var salida = document.getElementById('salida');
+	var registrar = document.getElementById('registrar');
+	var registrar1 = document.getElementById('registrar1');
+	var registrar3 = document.getElementById('registrar3');
+
+
+
+
+
+
+
+	reg.onclick = function(){
+		var num = document.getElementById('num').value;
+		lista.innerHTML = "<li>Random:"+Math.round(Math.random()*num)+"</li>";
+		lista.innerHTML += "<li>Math.round:"+Math.round(num)+"</li>";
+		lista.innerHTML += "<li>Math.ceil:"+Math.ceil(num)+"</li>";
+		lista.innerHTML += "<li>Math.floor:"+Math.floor(num)+"</li>";
+		lista.innerHTML += "<li>Math.pow:elevado a la 2 "+Math.pow(num,2)+"</li>";
+		lista.innerHTML += "<li>Math.abs:"+Math.abs(num)+"</li>";
+
+
+
+		
+
+
+	}
+	reg1.onclick = function(){
+		var num1 = document.getElementById('num1').value;
+		var num2 = document.getElementById('num2').value;
+		var num3 = document.getElementById('num3').value;
+		var num4 = document.getElementById('num4').value;
+
+		salida.innerHTML = Math.max(num1,num2,num3,num4);
+	}
+	reg2.onclick = function(){
+		 var num1 = document.getElementById('num1').value;
+		 var num2 = document.getElementById('num2').value;
+		 var num3 = document.getElementById('num3').value;
+		 var num4 = document.getElementById('num4').value;
+
+		// var num=[];
+		// for (var i = 0; i < 3; i++) {
+		// 	num[i]=prompt("ingrese numero");
+		// 	salida.innerHTML = Math.min(num[i]);
+		// }
+
+		salida.innerHTML = Math.min(num1,num2,num3);
+
+		
+	}
+	var mayor1 = 0;
+	var menor1= 100000;
+	registrar1.onclick = function(){
+		var mayor = parseInt(document.getElementById('mayor').value);
+		
+		
+		if(mayor > mayor1){
+			
+			mayor1=mayor;
+			registrar.innerHTML = "el valor es : " + mayor1;
+		}
+
+		if(mayor < menor1){
+			menor1=mayor;
+			registrar3.innerHTML = "el valor es : " + menor1;
+		}
+
+	}
+
+
+	</script>
+</body>
+</html>

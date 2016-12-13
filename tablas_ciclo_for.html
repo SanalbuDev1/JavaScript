@@ -13,7 +13,7 @@
 		margin:100px auto;
 	}
 	td{
-		background-color: red;
+		
 		border:1px solid #ccc;
 	}
 	</style>
@@ -48,10 +48,13 @@
 
 		var fila = document.getElementById('fila').value;
 		var colum = document.getElementById('colum').value;
+		var blue=255;
 		for (var i = 0; i < fila; i++) {
-			contenidoTabla += '<tr>';
+			contenidoTabla += '<tr >';
 			for (var j = 0; j < colum; j++) {
-				contenidoTabla += '<td> '+ i + '+' + j + '</td>'
+				
+				contenidoTabla += '<td style="background-color:rgba('+blue+',0,0,1)"> '+ i + '+' + j + '</td>'
+				blue -=5;
 			}
 
 			contenidoTabla += '</tr>';

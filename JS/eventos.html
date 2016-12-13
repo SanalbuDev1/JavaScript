@@ -4,12 +4,56 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 </head>
-<body>
+<body id="doc">
 <style>
+	html{
+		border-top: 5px solid black;
+		background: -webkit-radial-gradient(yellow,#FF5400);
+		height: 100%;
+	}
+	body{
+		font: 16px Arial;
+		margin:0;
+	}
+	h1{
+		margin:0;
+		background-color: rgba(0,0,0,0.2);
+		color:white;
+		font-size: 1.2em;
+		padding: 20px;	
+		text-transform: uppercase;
+		
+			
+	}
+	select{
+		-webkit-appearance:none;
+		border:none;
+		border-radius: 5px;
+		outline:none;
+		padding: 20px;	
+		width: 240px;
+		margin:20px 20px;
+		background: white url(imgs/da.png)no-repeat 200px center; 	
+		background-size: 40px;
+	}
+	option{
+		background-color: 	gray;
+		text-align: center;
+		color:white;
+		font-size: 15px;
+			
+	}
+	hr{
+		margin: 0;	
+		border:12px solid rgba(0,0,0,1);
+
+	}
 	figure#car{
 		height: 400px;
 		width: 400px;
 		margin:50px auto;
+		position: relative;
+		-webkit-transition: all 0.3s;
 	
 	}
 	figure#car.out-anim{
@@ -50,16 +94,51 @@
 	<h1>Eventos JS</h1>
 	<hr>
 	<select name="" id="comida">
-		<option value="1">car 1</option>
-		<option value="2">car 2</option>
-		<option value="3">car 3</option></select>
+		<option value="">Selecione comida</option>
+		<option value="1">Comida 1</option>
+		<option value="2">Comida 2</option>
+		<option value="3">Comida 3</option></select>
 	<figure id="car"  ></figure>
 
 	<script>	
 
 		var comida = document.getElementById('comida');
 		var comidita = document.getElementById('car');
+		var doc = document.getElementById('doc');
+
+		var up=0;
+		var left1=0;
+		
+
 		comidita.classList.add('comida1');
+
+		doc.onkeydown = function(evt){
+			switch(evt.keyCode){
+				case 37:
+						console.log("Left");
+						left1 += -20 ;
+						car.style.left = left1 +'px';
+						break;
+				case 38:
+						console.log("top");
+						up += -20 ;
+						car.style.top= up+'px';
+						
+						break;
+				case 39:
+						console.log("right");
+						left1 += 20 ;
+						car.style.left= left1+'px';
+						break;
+				case 40:
+						console.log("down");
+						up+= 20 ;
+						car.style.top= up+'px';
+						break;
+
+
+			}
+		}
 
 		comida.onchange = function(){
 			//car.className ='';

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>	</title>
+</head>
+<body>
+	<h1>	Metodos Matematicos JS</h1>
+	<hr>
+	<h3>Numeros Aleatorios</h3>
+	<button id="btnA">Registrar</button>
+	<h3>Imagenes Aleatorias(5 imagenes)</h3>
+	<figure id="image" width="200px">	</figure>
+	<button id="BotonImagen">Mostrar imagen</button>
+
+
+
+	<script>
+		
+		var BotonImagen= document.getElementById('BotonImagen');
+		var btnA = document.getElementById('btnA');
+		var image = document.getElementById('image');
+
+
+		var imagenes = [
+		'https://lh3.googleusercontent.com/8u_3x0cyMiF_5r9TUw2l_sUnz-kKyQUA0WLDnn1V3xNCnJjkH_Mm_Aum_0kdgksRG8c=w300',
+		'http://cdn.atomix.vg/wp-content/uploads/2016/02/Gabumon.png',
+		'http://cde.peru.com/ima/0/1/3/2/4/1324690/924x530/digimon-adventure-tri.jpg'
+		];
+
+		BotonImagen.onclick = function(){
+			var ima = Math.round(Math.random()*imagenes.length);
+			image.innerHTML= "<img src='"+imagenes[ima]+"'>";
+		}
+
+
+	</script>
+</body>
+</html>
