@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>	</title>
+</head>
+<body>
+    <style>	
+
+		div{
+			height: 80px;	
+			margin-bottom: 4px;	
+			background-color: 	red;
+		}
+
+    </style>
+	<h1>Ciclo (do while) js</h1>
+	<hr>	
+	<section id=colors>	</section>
+
+	<script>	
+			var colores = document.getElementById('colors');
+			var i = 0;
+			var red = 250;
+			var green = 0;
+			var blue = 50;
+			do{	
+				colores.innerHTML += "<div style='background-color: rgb("+red+","+green+","+blue+")'></div>";
+				red -= 25;
+				green += 25;
+				blue += 20;
+			    i++;
+			}while(i<=10);
+	</script>
+</body>
+</html>

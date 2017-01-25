@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Condicional (SWITCH)</title>
+</head>
+<body>
+	<script>
+		var saludo = document.getElementById('saludo');
+		var fecha = new Date();
+
+		switch(fecha.getDay()){
+			case 1:
+				saludo.innerHTML = "Lunes";
+				break;
+			case 2:
+				saludo.innerHTML = "Martes";
+				break;
+			case 3:
+				saludo.innerHTML = "Miercoles";
+				break;
+			case 4:
+				saludo.innerHTML = "Jueves";
+				break;
+			case 5:
+				saludo.innerHTML = "Viernes";
+				break;
+			default:
+				saludo.innerHTML = "Feliz Fin de Semana";
+				break;
+		}
+	</script>
+</body>
+</html>

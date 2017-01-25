@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>	</title>
+</head>
+<body>
+<style>	
+	
+	table{
+		border:5px solid black;
+		margin: 100px auto;
+		width: 1000px;	
+	}
+	table tr:nth-child(odd){
+		background-color: 	gray;
+	}
+	td,th,thead{
+		margin: 0;	
+		padding: 0;	
+		border-bottom: 2px solid black;
+		text-align: center;
+		padding: 10px;	
+		font-weight: bold;
+		transition: all 1s;
+			
+	}
+	td:hover,th:hover{
+		background-color: 	black;
+		transition: all 1s;
+		opacity: 0.5;
+	}
+
+
+</style>
+	<table >
+		<thead>
+			<tr>
+				<td 	colspan="4"> Operadores Aritmeticos</td>
+			</tr>
+			<tr>
+				<th>Operador</th>
+				<th>Descripcion</th>
+				<th>Ejemplo</th>
+				<th>Resultado</th>
+			</tr>
+		</thead>
+		<tbody>	
+				
+				<tr>    
+						<th>+</th>
+						<th>suma</th>
+						<th>x=y+2;</th>
+						<th id="rsuma">	</th>
+				</tr>
+					
+			
+				</tr>
+				<tr>    
+						<th>+</th>
+						<th>resta</th>
+						<th>x=y-2;</th>
+						<th id="rresta"></th>
+				</tr>
+				<tr>
+						<th>*</th>
+						<th>producto</th>
+						<th>x=y*2;</th>
+						<th id="rpro"></th>
+				</tr>
+				<tr>
+						<th>/</th>
+						<th>division</th>
+						<th>x=y/2;</th>
+						<th id="rdiv"></th>
+				</tr>
+				<tr>
+						<th>++</th>
+						<th>Incremento</th>
+						<th>x=y++;</th>
+						<th id="rinc"></th>
+				</tr>
+				<tr>
+					<td>--</td>
+					<td>Incremento</td>
+					<td>x=y--;</td>
+					<td id="rdes"></td>
+				</tr>
+						
+		</tbody>
+		<script>	
+			
+			
+			var rsuma=document.getElementById('rsuma');
+			var rresta=document.getElementById('rresta');
+			var rpro=document.getElementById('rpro');
+			var rdiv=document.getElementById('rdiv');
+			var rinc=document.getElementById('rinc');
+			var y=5;
+
+		
+			rdiv.innerHTML		= y/2;
+			rpro.innerHTML		= y*2;
+			rresta.innerHTML	= y-2;
+			rsuma.innerHTML		= y+2;
+			rinc.innerHTML		= ++y;
+			y=5;
+			rdes.innerHTML		= --y;
+		</script>
+	</table>
+</body>
+</html>

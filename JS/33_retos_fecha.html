@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>	</title>
+</head>
+<style>	
+
+	div{
+		margin:100px auto;
+		width: 300px;	
+		height: 200px;	
+		background-color: orange;
+	}
+	h1{text-align: center;
+		}
+	input,h3{
+		margin: 2px 60px;
+		font:14px Verdana;
+	}
+	input:last-child{
+		width: 150px;	
+		text-align: center;
+		margin:2px 70px;
+		
+			
+			
+	}
+
+</style>
+<body>
+	
+	<h1>Resultados</h1>
+		<div>
+		<h3>el dia en que nacio</h3>
+		<input type="number" id="numero" >
+		<h3>el mes en que nacio</h3>
+		<input type="number" id="mes">
+		<h3>el año en que nacio</h3>
+		<input type="number " id="ano">
+		<input type="submit" value="Registrar" id="regis">
+		</div>
+		
+
+
+	
+		<h1 id="registrar">mostar:</h1>
+		<script>	
+
+			var regis=document.getElementById('regis');
+			var registrar=document.getElementById('registrar');
+			
+			regis.onclick=function(){
+				var dia =document.getElementById('numero').value;
+				var mes =document.getElementById('mes').value;
+				var ano =document.getElementById('ano').value;
+
+				if(dia.length > 0 && mes.length > 0 && ano.length > 0){
+					
+						var fecha = new Date();
+						var actfecha = new Date(fecha.getFullYear()+'/'+(fecha.getMonth()+1)+'/'
+							+ fecha.getDate());
+						var pasfecha = new Date(ano+'/'+mes+'/'+dia);
+						var rasfecha = actfecha - pasfecha;
+						// alert(rasfecha);
+						alert(actfecha);
+						alert(pasfecha);
+						rasfecha= (((rasfecha/1000)/60)/60)/24;
+						registrar.innerHTML= rasfecha;
+				 }else{
+				 	alert('rellene los campos');
+				}
+
+			}
+
+		</script>
+
+
+</body>
+</html>

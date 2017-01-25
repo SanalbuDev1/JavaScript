@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Operadores Aritmeticos</title>
+	<style>
+		table{
+			border-collapse: collapse;
+			color: #777;
+			font: 16px Arial;
+			padding: 4px;
+			margin:100px auto;
+			width: 800px;
+			text-align: center;
+		}
+		table td, table th{
+			border: 1px dotted #ccc;
+			padding: 8px;
+		}
+		table th{
+			background-color: #999;
+			color: #fff;
+		}
+		table tr:nth-child(even){
+			background-color: #ddd;
+		}
+	</style>
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<td colspan="4">Operadores Aritmeticos</td>
+			</tr>
+			<tr>
+				<th>Operador</th>
+				<th>Descripcion</th>
+				<th>Ejemplo</th>
+				<th>Resultado X</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>+</td>
+				<td>SUMA</td>
+				<td>x=y-2</td>
+				<td id="rresta"></td>
+			</tr>
+			<tr>
+				<td>-</td>
+				<td>RESTA</td>
+				<td>x=y+2</td>
+				<td id="rsuma"></td>
+			</tr>
+			<tr>
+				<td>*</td>
+				<td>PRODCTO</td>
+				<td>x=y*2</td>
+				<td id="rproducto"></td>
+			</tr>
+			<tr>
+				<td>/</td>
+				<td>DIVISION</td>
+				<td>x=y/2</td>
+				<td id="rdivision"></td>
+			</tr>
+			<tr>
+				<td rowspan="2">++</td>
+				<td rowspan="2">INCREMENTO</td>
+				<td>x=y++</td>
+				<td id="rincrementopre"></td>
+			</tr>
+			<tr>
+				<td>x=y++</td>
+				<td id="rincrementopos"></td>
+			</tr>
+			<tr>
+				<td rowspan="2">--</td>
+				<td rowspan="2">DECREMENTO</td>
+				<td>x=y--</td>
+				<td id="rdecrementopre"></td>
+			</tr>
+			<tr>
+				<td>x=y--</td>
+				<td id="rdecrementopos"></td>
+			</tr>
+		</tbody>
+
+	</table>
+	<script>
+		//varibles
+		var y = 5;
+		var rsuma = document.getElementById('rsuma');
+		var rresta = document.getElementById('rresta');
+		var rproducto = document.getElementById('rproducto');
+		var rdivision = document.getElementById('rdivision');
+		var rincrementopre = document.getElementById('rincrementopre');
+		var rincrementopos = document.getElementById('rincrementopos');
+		var rdecrementopre = document.getElementById('rdecrementopre');
+		var rdecrementopos = document.getElementById('rdecrementopos');
+
+
+		//repuestas
+		rsuma.innerHTML = y + 2;
+		rresta.innerHTML = y - 2;
+		rproducto.innerHTML = y * 2;
+		rdivision.innerHTML = y / 2;
+		rincrementopre.innerHTML = ++y;
+		y = 5;
+		rincrementopos.innerHTML = y++;
+		y = 5;
+		rdecrementopre.innerHTML = --y;
+		y = 5;
+		rdecrementopos.innerHTML = y--;
+
+
+
+
+
+	</script>
+</body>
+</html>

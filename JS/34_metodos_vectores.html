@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Metodos vectores (JS)</h1>
+	<hr>
+	<ul id="vector"></ul>
+
+	<script>
+		
+	var vector = document.getElementById('vector');
+	var lprog = new Array('Php','Ruby','C sharp','JavaScript','Phyton');
+
+	vector.innerHTML = "<li> valores de arreglos "+lprog.valueOf()+"</li>";
+	vector.innerHTML += "<li> arreglo a cadena "+lprog.toString()+"</li>";
+	vector.innerHTML += "<li> Unir los valores con /"+lprog.join()+"</li>";
+	vector.innerHTML += "<li> orden /"+lprog.sort()+"</li>";
+	vector.innerHTML += "<li> revertir /"+lprog.reverse()+"</li>";
+
+	lprog.unshift('Pseint');
+	vector.innerHTML += "<li> agregar al inicio /"+lprog+"</li>";
+	lprog.push('Java');
+	vector.innerHTML += "<li> agregar al final /"+lprog+"</li>";
+	lprog.shift();
+	lprog.pop();
+	vector.innerHTML += "<li> elimina al inicio y final /"+lprog+"</li>";
+
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

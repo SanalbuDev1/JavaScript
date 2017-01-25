@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	
+</head>
+<body>
+
+	<h1>Funciones Con Argumentos</h1>
+	<hr>
+	<h2 id="saludo"></h2>
+	<script>
+		
+		var nombre = prompt('¿Cual es su nombre?');
+		var respuesta = prompt('¿Cuanto es 12 + 27?');
+
+		var saludo = document.getElementById('saludo');
+		function procesar(nomb , resp){
+			if(resp == 39){
+				saludo.innerHTML = "Felicitaciones " + nomb ;
+			}else{
+				saludo.innerHTML = "Respuesta incorrecta bebe";
+			}
+		} 
+
+		procesar(nombre,respuesta);
+
+		
+	</script>
+</body>
+</html>

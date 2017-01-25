@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	body{
+		background: black;
+	}
+	h2{
+		text-align: center;
+		padding-bottom: 4px;
+		border-bottom: 1px solid rgba(255,222,0,0.6);
+		color:white;
+		
+	}
+	.center{
+		margin:40px auto;
+		display: block;
+		width: 500px;
+		
+		
+	}
+	nav{
+		
+		text-align: center;
+		
+	}
+	nav ul  {
+		padding: 0;
+		margin:30px auto;
+		width: 910px;
+	}
+	nav ul li  {
+		background-color: gray;
+		display: inline-block;
+		height: 200px;
+		margin: 4px;
+		list-style: none;
+		width: 140px;
+		padding: 15px;
+		-webkit-transition: all 0.5s ease-in;
+		
+		
+	}
+	nav ul li.carac:hover, nav ul li.active{
+		-webkit-transform: translateX(10px) scaleY(1.1);
+		
+		 
+
+	}
+	nav ul li.carac{
+		background-size: cover;
+	}
+	.c1{
+		background: url(imgs/ekko.jpg)no-repeat center center;
+		
+
+	}
+	.c2{
+		background: url(imgs/teemo.jpg)no-repeat -120px  center;
+		
+		background-size: cover;
+	}
+	.c3{
+		background: url(imgs/trynda.jpg)no-repeat -180px center;
+		
+		
+	}
+	.c4{
+		background: url(imgs/kasadin.jpg)no-repeat -110px center;
+	
+		
+	}
+	.c5{
+		background: url(imgs/yorick.jpg)no-repeat -228px center;
+		
+		
+	}
+</style>
+<body>
+	<img src="imgs/lol.jpg" class="center">
+	<h2>selecione el personaje</h2>
+	<nav>
+		<ul>
+				<li class="carac c1"></li>
+				<li class="carac c2"></li>
+				<li class="carac c3"></li>
+				<li class="carac c4"></li>
+				<li class="carac c5"></li>	
+		</ul>
+	</nav>
+
+	<script>
+		
+	var carac = document.getElementsByClassName('carac');
+	for (var i = 0 ; i < carac.length ; i++) {
+		carac[i].onclick=function(){
+			inactiveCarac();
+			activeCharacter(this);
+		}
+		
+	}
+	function inactiveCarac(){
+		for (var i = 0 ; i < carac.length ; i++) {
+			carac[i].classList.remove('active');
+		}
+    }
+	function activeCharacter(elem){
+		elem.classList.add('active');
+	}
+	</script>
+</body>
+</html>

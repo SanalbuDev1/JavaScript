@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body id="doc">
+<style>
+	html{
+		border-top: 5px solid black;
+		background: -webkit-radial-gradient(yellow,#FF5400);
+		height: 100%;
+	}
+	body{
+		font: 16px Arial;
+		margin:0;
+	}
+	h1{
+		margin:0;
+		background-color: rgba(0,0,0,0.2);
+		color:white;
+		font-size: 1.2em;
+		padding: 20px;	
+		text-transform: uppercase;
+		
+			
+	}
+	select{
+		-webkit-appearance:none;
+		border:none;
+		border-radius: 5px;
+		outline:none;
+		padding: 20px;	
+		width: 240px;
+		margin:20px 20px;
+		background: white url(imgs/da.png)no-repeat 200px center; 	
+		background-size: 40px;
+	}
+	option{
+		background-color: 	gray;
+		text-align: center;
+		color:white;
+		font-size: 15px;
+			
+	}
+	hr{
+		margin: 0;	
+		border:12px solid rgba(0,0,0,1);
+
+	}
+	figure#car{
+		height: 400px;
+		width: 400px;
+		margin:50px auto;
+		position: relative;
+		-webkit-transition: all 0.3s;
+	
+	}
+	figure#car.out-anim{
+		-webkit-animation: 1s animOut ease-in 1;
+	}
+	@-webkit-keyframes animOut{
+		0%{
+			-webkit-transform: translateX(0px);
+		}
+		100%{
+			-webkit-transform: translateX(1300px);
+		}
+	}
+	figure#car.in-anim{
+		-webkit-animation: 1s animIn ease-in 1;
+	}
+	@-webkit-keyframes animIn{
+		0%{
+			-webkit-transform: translateX(-1300px);
+		}
+		100%{
+			-webkit-transform: translateX(0px);
+		}
+	}
+	figure#car.comida1{
+		background: url(imgs/ham.png)no-repeat center center;
+		
+	}
+	figure#car.comida2{
+		background: url(imgs/sanduche.jpg)no-repeat center center;
+		
+	}
+	figure#car.comida3{
+		background: url(imgs/pastel.jpg)no-repeat center center;
+		
+	}
+</style>
+	<h1>Eventos JS</h1>
+	<hr>
+	<select name="" id="comida">
+		<option value="">Selecione comida</option>
+		<option value="1">Comida 1</option>
+		<option value="2">Comida 2</option>
+		<option value="3">Comida 3</option></select>
+	<figure id="car"  ></figure>
+
+	<script>	
+
+		var comida = document.getElementById('comida');
+		var comidita = document.getElementById('car');
+		var doc = document.getElementById('doc');
+
+		var up=0;
+		var left1=0;
+		
+
+		comidita.classList.add('comida1');
+
+		doc.onkeydown = function(evt){
+			switch(evt.keyCode){
+				case 37:
+						console.log("Left");
+						left1 += -20 ;
+						car.style.left = left1 +'px';
+						break;
+				case 38:
+						console.log("top");
+						up += -20 ;
+						car.style.top= up+'px';
+						
+						break;
+				case 39:
+						console.log("right");
+						left1 += 20 ;
+						car.style.left= left1+'px';
+						break;
+				case 40:
+						console.log("down");
+						up+= 20 ;
+						car.style.top= up+'px';
+						break;
+
+
+			}
+		}
+
+		comida.onchange = function(){
+			//car.className ='';
+			car.classList.remove('in-anim');
+			car.classList.add('out-anim');
+
+			if(this.value == 1) {
+				comidita.classList.add('out-anim');
+				setTimeout(function(){
+					comidita.classList.remove('comida2','comida3','out-anim');
+					comidita.classList.add('in-anim','comida1');
+				},500);
+			};
+			if(this.value == 2) {
+				comidita.classList.add('out-anim');
+				setTimeout(function(){
+					comidita.classList.remove('comida1','comida3','out-anim');
+					comidita.classList.add('in-anim','comida2');
+				},500);
+			};
+			if(this.value == 3) {
+				comidita.classList.add('out-anim');
+				setTimeout(function(){
+					comidita.classList.remove('comida2','comida2','out-anim');
+					comidita.classList.add('in-anim','comida3');
+				},500);
+			};
+
+		}
+
+	</script>
+</body>
+</html>

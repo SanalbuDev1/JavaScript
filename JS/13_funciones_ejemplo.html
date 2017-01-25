@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>	Ejemplo</title>
+</head>
+<body>
+		
+		<style>	
+
+		body{background: teal;font:16px Arial;}
+		nav{
+		
+			margin:150px auto;
+			width: 1164px;		
+		}
+		nav ul.product{
+			list-style: none;	
+			margin: 0;	
+			padding: 0;	
+		}
+		nav ul.product li{
+			
+			border-radius: 156px;
+			border:6px solid black;
+			background-color: #fff;
+			padding: 10px;	
+			display: inline-block;
+			vertical-align: top;
+			width: 300px;
+			height: 280px;
+			margin-right: 50px;	
+			 overflow: hidden;	
+						
+		}
+		li:last-child{
+			margin-right: 0px;	
+		}
+		nav ul.product li div figure.img{
+			background-color: rgba(32,32,32,0.2);
+			height: 200px;	
+			margin: 50px auto;
+			width: 200px;	
+			border-radius:50%;
+		}
+		nav ul.product li div figure.img1{
+			background: url(imgs/zombie1.jpg)no-repeat center center;
+			background-size:100%;
+			transition: ease-in all 0.3s;
+
+		}
+		nav ul.product li div figure.img1:hover{
+			transition: ease-in all 0.3s;
+			
+			background-size:140%;
+		}
+
+		nav ul.product li div figure.img2{
+			background: url(imgs/zombie2.jpg)no-repeat center center;
+			background-size:100%;
+		}
+		nav ul.product li div figure.img3{
+			background: url(imgs/zombie3.jpg)no-repeat center center;
+			background-size:100%;
+		}
+		nav ul.product li div button{
+			background-color: 	teal;
+			border:none;
+			border-radius:100px;
+			display: block;	
+			margin:-42px auto 0px auto;
+			width: 140px;	
+			padding: 10px;
+			font:16px Arial;
+			-webkit-transition:  ease-in all 0.5s;		
+		}
+		button:hover{
+			-webkit-transition:  ease-in all 0.5s;
+			cursor:pointer;
+			-webkit-transform: scale(1.1);
+			color:white;
+		}
+
+		.movedown{
+			-webkit-animation: 0.5s animM 1 forwards;
+		}
+		.up{
+			-webkit-animation: 0.5s animMsa 1 forwards;
+		}
+		@-webkit-keyframes animMsa {
+				0%{
+					transform: translateX(0px)translateY(250px) ;
+					opacity: 1;
+
+				}
+				
+				100%{
+					transform: translateX(0px)translateY(0px) ;
+					opacity: 1;
+				}
+		}
+		@-webkit-keyframes animM {
+				0%{
+					transform: translateX(0px)translateY(0px) ;
+					opacity: 1;
+
+				}
+				
+				100%{
+					transform: translateX(0px)translateY(250px) ;
+					opacity: 1;
+				}
+		}
+
+		.hide{
+			display: none;
+				
+		}
+		
+		h2 p{
+			font-size: 8px;
+		}
+		div.info{
+			background-color: 	#000;
+			height: 130px;	
+			
+			width: 100%;	
+			position: relative;
+			top:0px;
+
+		}
+		div.info h2{
+			margin-left:25px;
+			color:white;
+			height: 100%;
+			text-align: center;
+			width: 80%;	
+				
+		}
+		div.info h2 span{
+			background-color: 	red;
+			border-radius: 10px;
+			display: block;
+			position: absolute;
+			top: 0;	
+			right: 0;
+			cursor:pointer;	
+		}
+		section.block{
+			position:relative;
+			top:-150px;
+		}
+		</style>
+	<nav>	
+		<ul class="product">
+			<li id="pr1">
+			<section class="block">	
+			<div class="info">
+				<h2>Yeti
+					<p>	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, voluptatem quaerat doloribus soluta beatae, minus, dicta, aliquam assumenda tempore ipsum id! Repellendus provident expedita earum a voluptates, voluptatum, nemo hic!
+					</p>
+					<span id="click1"> &times;</span>
+				</h2>
+			</div>
+				<div class="state ">	
+						<figure class="img img1"></figure>
+						<button id="btn1">ver +</button>
+				</div>
+			</section>
+				
+			</li>
+			<li id="pr2">
+			<section class="block">	
+			<div class="info">
+				<h2>Yeti
+					<p>	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, voluptatem quaerat doloribus soluta beatae, minus, dicta, aliquam assumenda tempore ipsum id! Repellendus provident expedita earum a voluptates, voluptatum, nemo hic!
+					</p>
+					<span id="click2"> &times;</span>
+				</h2>
+			</div>
+				<div class="state ">	
+						<figure class="img img2"></figure>
+						<button id="btn2">ver +</button>
+				</div>
+			</section>
+				
+     		</li>
+			<li id="pr3">
+			<section class="block">	
+			<div class="info">
+				<h2>Yeti
+					<p>	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, voluptatem quaerat doloribus soluta beatae, minus, dicta, aliquam assumenda tempore ipsum id! Repellendus provident expedita earum a voluptates, voluptatum, nemo hic!
+					</p>
+					<span id="click3"> &times;</span>
+				</h2>
+			</div>
+				<div class="state ">
+						<figure class="img img3"></figure>
+						<button id="btn3">ver +</button>	
+				</div>
+				</section>
+			</li>
+		</ul>
+	</nav>
+
+	<script>	
+
+			var states = document.getElementsByClassName('block');
+			var boton1 = document.getElementById('btn1');
+			var boton2 = document.getElementById('btn2');
+			var boton3 = document.getElementById('btn3');
+			var click1  = document.getElementById('click1');
+			var click2  = document.getElementById('click2');
+
+			var click3  = document.getElementById('click3');
+
+
+			function toggleFx(ddd,ir){
+				if(ir =='down'){
+					states[ddd].classList.add('movedown');
+					//setTimeout(function() {states[ddd].classList.remove('movedown');},1200);
+					
+				}else{
+					states[ddd].classList.add('up');
+					
+				}
+				
+			}
+			
+
+			click1.onclick=function(){
+				toggleFx(0 , 'up');
+			}
+			click2.onclick=function(){
+				toggleFx(1 , 'up');
+			}
+			click3.onclick=function(){
+				toggleFx(2 , 'up');
+			}
+
+			boton1.onclick=function(){
+				toggleFx(0 ,'down');
+			}
+
+			boton2.onclick=function(){
+				toggleFx(1 ,'down');
+			}
+
+			boton3.onclick=function(){
+				toggleFx(2 ,'down');
+			}
+
+	</script>
+</body>
+</html>
