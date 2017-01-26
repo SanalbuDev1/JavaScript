@@ -6,7 +6,7 @@
 </head>
 <style>
 	body{
-		background: black;
+		background: rgba(0,0,0,.6);
 	}
 	h2{
 		text-align: center;
@@ -30,7 +30,7 @@
 	nav ul  {
 		padding: 0;
 		margin:30px auto;
-		width: 910px;
+		max-width: 910px;
 	}
 	nav ul li  {
 		background-color: gray;
@@ -78,23 +78,84 @@
 		
 		
 	}
+	.config{
+		max-width: 400px;
+		margin:auto;
+		text-align: center;
+	}
+	div.config section select,
+	div.config section button{
+		background-color: #B2FEC0;
+		-webkit-appearance:none;
+		padding: 10px 20px;
+		border:none;
+		border-radius: 0px;
+		outline: none;
+		transition: all 1s ease-in;
+
+	}
+	div.config section select:hover,div.config section button:hover{
+		background-color: white;
+		transition: all 1s ease-out;
+		cursor:pointer;
+	}
+	div.config section select{
+		background: #F68E29 url(imgs/down.png) no-repeat;
+		background-position : right center;
+		background-size: 10%;
+	}
+	nav ul#showchvector li{
+		background-color: cover;
+		height: 680px;
+		width: 100%;
+
+	}
+	
+
+	
 </style>
 <body>
 	<img src="imgs/lol.jpg" class="center">
 	<h2>selecione el personaje</h2>
 	<nav>
 		<ul>
-				<li class="carac c1"></li>
-				<li class="carac c2"></li>
-				<li class="carac c3"></li>
-				<li class="carac c4"></li>
-				<li class="carac c5"></li>	
+				<li id="c1" class="carac c1"></li>
+				<li id="c2" class="carac c2"></li>
+				<li id="c3" class="carac c3"></li>
+				<li id="c4" class="carac c4"></li>
+				<li id="c5" class="carac c5"></li>	
 		</ul>
 	</nav>
+	<h2>Configuracion</h2>
+	<div class="config">
+		<section>
+			
+			<select name="" id="position">
+				<option value="">Selecione posicion </option>
+				<option value="1">Inicio</option>
+				<option value="2">Final</option>
+				
+				
 
+			</select>
+			<button id="add">Adicionar </button>
+			<button id="delete">Eliminar</button>
+		</section>
+	</div>
+	<h2>lista</h2>
+	<nav><ul id="showchvector"></ul></nav>
+	
 	<script>
 		
 	var carac = document.getElementsByClassName('carac');
+	var showchvector = document.getElementById('showchvector');
+	var cselected = null;
+	var position=null;
+	var badd=document.getElementById('add');
+	var bdelete=document.getElementById('delete');
+
+	var chvector = new Array();
+
 	for (var i = 0 ; i < carac.length ; i++) {
 		carac[i].onclick=function(){
 			inactiveCarac();
@@ -109,7 +170,60 @@
     }
 	function activeCharacter(elem){
 		elem.classList.add('active');
+		cselected=elem.getAttribute('id');;
 	}
+	
+
+	function validateInputs(){
+		position=document.getElementById('position').value;
+		if(cselected != null && position.length > 0){
+			return true;
+
+		}else{
+			return false;
+		}
+		
+	}
+
+	function renderVector(){
+			showchvector.innerHTML= "";
+			for (var i = 0; i < chvector.length; i++) {
+				showchvector.innerHTML += "<li class='"+chvector[i]+"'><span>"+i+"</span></li>";
+			}
+		}
+
+	badd.onclick=function(){
+	
+	
+		if(validateInputs()){
+			if(position==1){
+				chvector.unshift(cselected);
+			}
+			if(position==2){
+				chvector.push(cselected);
+			}
+			console.log(chvector);
+			renderVector();
+
+		}
+
+	}
+	bdelete.onclick=function(){
+	
+		if(validateInputs()){
+			if(position==1){
+				chvector.shift(cselected);
+			}
+			if(position==2){
+				chvector.pop(cselected);
+			}
+			console.log(chvector);
+			renderVector();
+
+		}
+
+	}
+
 	</script>
 </body>
 </html>

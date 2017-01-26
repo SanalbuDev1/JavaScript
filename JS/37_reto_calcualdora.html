@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<style>
+		*{
+			vertical-align: top;
+			
+
+		}
+		h1{
+			display: inline-block;
+			width: 600px;
+			height: 600px;
+			
+			margin:200px 200px;
+			border:2px solid green;
+			text-align: center;
+			border-radius: 100%;
+			position:absolute;
+			top:0;
+			line-height: -180px;
+			
+		}
+		h2{
+			display: inline-block;
+			width: 620px;
+			height: 620px;
+			font-size:240px;
+			margin:200px 200px;
+			border:2px solid blue;
+			text-align: center;
+			border-radius: 100%;
+			position:absolute;
+			top:-10px;
+			left:230px;
+		}
+		span{
+			font-size:300px;
+			position:absolute;
+			top:130px;
+			left:50px;
+		}
+
+	</style>
+	
+	<input id="tiempo" type="number" placeholder="Escriba los segundos del cronometro">
+	<input id="registro" type="submit" value="submit">
+	
+	<h1 ><span id="cronometro">6000</span></h1>
+	<h2></h2>
+
+	<script>
+	
+
+	
+	var cronometro= document.getElementById('cronometro');
+	var registro= document.getElementById('registro');
+	
+
+	registro.onclick=function(){
+		
+		var tiempo = document.getElementById('tiempo').value;
+
+		var intervalo=setInterval(function(){
+
+			if(tiempo==0){
+				clearInterval(intervalo);
+			}
+			cronometro.innerHTML = tiempo;
+			tiempo--;
+		},500);
+	}
+
+
+	</script>
+</body>
+</html>

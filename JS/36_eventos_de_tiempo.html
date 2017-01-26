@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Eventos de tiempo JS</h1>
+	<hr>
+	<h3 id="tiempo"></h3>	
+
+	<script>
+	var tiempo=document.getElementById('tiempo');
+	var contador=60;
+	
+	var intervalo=setInterval(function(){
+		if(contador==0){
+			clearIntervarl(intervalo);
+		}
+		tiempo.innerHTML = contador + ' segundos';
+		contador--;
+	},10);
+	</script>
+</body>
+</html>
