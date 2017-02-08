@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<style>
+		
+		div{
+			border:2px solid;
+			padding: 40px;
+			width: 600px;
+		}
+
+	</style>
+	<h1>Eventos JQuery</h1>
+	<hr>
+	Director de eventos: <strong></strong>
+	<button id="dclick">Doble Click</button>
+	<br>
+	<div>poner cursor</div>
+
+
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	
+	<script src="js/jquery-3.1.1.js"></script>
+	<script>
+		
+	$(document).ready(function() {
+	
+		$nveces=0;
+		$('#dclick').dblclick(function(event) {
+			$(this).text('Doble click ('+(++$nveces)+')');
+		});
+
+		$(window).resize(function(event) {
+			$('strong').text('La pagina cambio de tamaño');
+		});
+
+		$(document).scroll(function(event){
+			$('strong').text('La pagina se desplazo');
+		});
+
+		$('div').mouseover(function(event) {
+			$(this).css('background-color','rgba('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+',1)');
+		});
+
+		$(document).mouseover(function(event){
+			$('strong').text('movio el mouse');
+		});
+
+
+
+	});
+
+	</script>
+</body>
+</html>
+

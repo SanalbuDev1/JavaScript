@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+<style>
+	body{
+		font-family: Arial;
+	}
+	p{
+		background-color: gray;
+		border:4px solid #aaa;
+		padding: 10px;
+	}
+</style>
+
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+	</head>
+	<body>
+		<h1>Ejemplo basico jQuery</h1>
+		<hr>
+
+		<article>
+			<h1>Lista de parrafos
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta perferendis quibusdam est ex harum, vero porro dicta deserunt vitae eveniet, molestiae illum. Debitis sint enim a, eveniet animi dignissimos magni!</p>
+				<p>Adipisci soluta a, nisi possimus qui quasi quidem dolor maiores neque, atque tenetur labore nihil enim at culpa consequuntur eveniet sapiente, officia iure doloremque odit. Minima laborum, nostrum sunt voluptate?</p>
+				<p>Illo animi dignissimos accusantium nisi, nihil inventore. Nemo aut laudantium quas consequatur quasi aspernatur perspiciatis atque error dolores eius corrupti facilis reiciendis quidem, voluptatum illo earum eligendi, accusantium quam minus.</p>
+				<p>Delectus error quisquam nulla pariatur quam. Nemo nostrum placeat reiciendis animi! Ducimus ipsam, minus, voluptatum harum veniam quidem, nesciunt enim maxime, aliquid esse optio iure in pariatur ut rem. Facilis.</p>
+				<p>Dolore praesentium mollitia reiciendis deserunt nesciunt voluptates aspernatur eligendi commodi officia cupiditate. Minima consectetur reiciendis omnis ab iure, sunt ipsa neque maiores aperiam atque, laboriosam nemo. Quia harum vel amet.</p>
+			</h1>
+		</article>
+		<button>Eliminar parrafo</button>
+
+		<script src="js/jquery-3.1.1.js"></script>
+		<script>
+			
+		$(document).ready(function() {
+			$('button').click(function(event){
+				$('p').first().remove();
+			});
+		});
+
+		</script>
+	</body>
+	</html>
+</body>
+</html>

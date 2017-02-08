@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<style>
+		body{
+			background-color: #F6BD97;
+			font-family: Arial;
+		}
+		section{
+			background-color: #fff;
+			color:#555;
+			padding: 20px;
+			width: 300px;
+			display: inline-block;
+			vertical-align: top;
+			
+			
+		}
+		section h2{
+			text-align: center;
+		}
+		section button{
+			border:none;
+			display: block;
+			width: 100%;
+			background-color: pink;
+			height: 30px;
+			margin-bottom: 2px;
+		}
+
+	</style>
+	<h1>Efectos JQuery</h1>
+	<hr>
+	<section>
+		<h2>Hide / Show</h2>
+		<img src="imgs/trompas.jpg" alt="">
+		<button id="btn1" >ocultar</button>
+		<button id="btn2" >toggle</button>
+
+	</section>
+
+		<section>
+		<h2>SlideUp/SlideDown</h2>
+		<img src="imgs/kiko.jpg" alt="">
+		<button id="btn3" >SlideDown</button>
+		<button id="btn4" >slidetoggle</button>
+		<button id="btn8">parar</button>
+		
+
+	</section>
+
+	<section>
+		<h2>FadeIn/FadeOut/FadeOut</h2>
+		<img src="imgs/kiko.jpg" alt="">
+		<button id="btn5" >Desvanecer</button>
+		<button id="btn6" >fadetoggle</button>
+		<button id="btn7" >fadeto_1000</button>
+
+		
+
+	</section>
+
+	<script src="js/jquery-3.1.1.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('body').on('click','#btn1' , function(event){
+				event.preventDefault();
+				if ($(this).text() == 'ocultar') {
+
+					$(this).prev().hide(3000);
+					$(this).text('mostrar');
+				}else{
+
+					$(this).prev().show(3000);
+					$(this).text('ocultar');
+				}	
+			});
+
+
+				//-----------------------------
+
+			$('body').on('click','#btn2' , function(event){
+				event.preventDefault();
+				$(this).prev().prev().toggle(3000);
+			})
+			$('body').on('click','#btn8' , function(event){
+				event.preventDefault();
+				$(this).prev().prev().prev().stop();
+			})
+
+
+			$('body').on('click','#btn3' , function(event){
+				event.preventDefault();
+				if ($(this).text() == 'SlideDown') {
+
+					$(this).prev().slideUp(5000);
+					$(this).text('SlideUp');
+				}else{
+
+					$(this).prev().slideDown(5000);
+					$(this).text('SlideDown');
+				}	
+			});
+
+			$('body').on('click','#btn4' , function(event){
+				event.preventDefault();
+				$(this).prev().prev().slideToggle(5000);
+			})
+
+			$('body').on('click','#btn5' , function(event){
+				event.preventDefault();
+				if ($(this).text() == 'Desvanecer') {
+
+					$(this).prev().fadeOut();
+					$(this).text('Aparecer');
+				}else{
+
+					$(this).prev().fadeIn();
+					$(this).text('Desvanacer');
+				}	
+			});
+
+			$('body').on('click','#btn6' , function(event){
+				event.preventDefault();
+				$(this).prev().prev().fadeToggle();
+			})
+
+			$('body').on('click','#btn7' , function(event){
+				event.preventDefault();
+				if ($(this).text() == 'fadeto_1000') {
+
+					$(this).prev().prev().prev().fadeTo(1000,0.5);
+					$(this).text('Normal');
+				}else{
+					$(this).prev().prev().prev().fadeTo(1000,1);
+					$(this).text('fadeto_1000');
+				}
+				
+			})
+		});
+				
+
+				
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+*{
+	margin:0;
+}
+body{
+	font-size:16px;
+	font-family: Verdana;
+	-webkit-animation:  4s animre forwards;
+}
+@keyframes animre{
+	0%,50%{
+		background: green;
+		transform: rotateX(15deg)rotateY(10deg)scale(1.2);
+	}
+	25%,60%{
+		transform: rotateX(15deg)rotateY(-10deg)scale(0.8);
+		background: white;
+	}
+	
+}
+section{
+	height: 400px;
+	margin:140px auto;
+	width: 800px;
+}
+
+section#stage1{
+	background-color: green;
+	box-shadow: 2px 2px 20px black;
+}
+section#stage2{
+	background-color: blue;
+	height: 500px;
+}
+#form{
+	margin:20px auto;
+	width: 200px;
+	height: 100px;
+
+	text-align: center;
+	
+}
+input{
+	padding: 5px;
+
+}
+
+#nombre2{
+
+	text-align: center;
+	
+}
+#nombre-p{
+	margin-top:0px;
+}
+
+ul{
+	
+	text-align: center;
+	margin:0px;
+	
+}
+ul li{
+	margin-top:10px;
+	width: 150px;
+	height: 150px;
+
+	display: inline-block;
+	transition: all 0.5s ease-in;
+	border-radius: 50%;
+	
+}
+ul li.carac:hover,ul li.active{
+    transform: scaleY(1.1);
+    transition: all 0.5s ease-out;
+    box-shadow: 0px 0px 10px gray,
+                0px 0px 60px black;
+
+    
+}
+#opt1{
+	background: url(../imgs/papel.jpg);
+	background-size: cover;
+}
+
+#opt2{
+	background: url(../imgs/piedra.jpg);
+	background-size: cover
+}
+
+#opt3{
+	background: url(../imgs/tijera.jpg);
+	background-size: cover;
+}
+
+button#next{
+	display: block;
+	text-align: center;
+	margin:auto;
+	padding: 20px;
+}
+h1{
+	text-align: center;
+	font:25px Verdana;
+	color:white;
+	padding: 10px;
+	background: rgba(88,171,90,1);
+	margin:0;
+	-webkit-animation:  4s animre forwards;
+
+}
+nav{
+	width: 65%;
+	height: 100px;
+
+	margin: 5px auto;
+}
+nav input {
+	display: block;
+	width: 50%;
+	padding: 10px;
+	margin:auto;
+	margin-top: 5px;
+}
+h2#ganador{
+	text-align: center;
+	background: #3068DA;
+	padding: 10px;
+	font:30px Arial;
+}
+article#padreg{
+	width: 80%;
+	height: 70%;
+	margin:auto;
+	text-align: center;
+	
+}
+article#padreg div{
+	display: inline-block;
+	width: 40%;
+	height: 100%;
+	
+}
+img{
+	border-radius: 50%;
+}
+#prev{
+	display: block;
+	margin:auto;
+	text-align: center;
+	width: 80%;
+	padding: 10px;
+}

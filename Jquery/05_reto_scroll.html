@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<div></div>
+
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+
+	<style>
+
+		*{
+			margin:0;
+		padding: 0;	
+		}
+		div{
+		width: 100%;
+		height: 300px;
+		position: fixed;
+		padding: 20px;	
+		/*background: black url(../JS/imgs/ekko.jpg)no-repeat center center ;*/
+		background: gray;
+		animation:0.5s animShowNav ease-in 1 forwards;
+
+	}
+		
+		
+		.hidenav{
+			animation:0.5s animHideNav ease-in 1 forwards;
+		}
+		@keyframes animHideNav{
+			0%{
+				top:0px;
+				opacity: 1;
+			}
+			100%{
+				top:-100px;
+				opacity:0;
+			
+			}
+		}
+		@keyframes animShowNav{
+			0%{
+				top:-100px;
+				opacity: 0;
+			}
+			100%{
+				top: 0px;
+				opacity:1;
+			
+			}
+		}
+		
+		
+
+	</style>
+	<script src="js/jquery-3.1.1.js"></script>
+	<script>
+		
+	// $(document).ready(function() {
+	// 	$(document).scroll(function(event){
+			
+
+	// 		$( 'div' ).slideDown( "slow", function() {
+ //    			$(this).css('transform','translateY(-1000px)');
+ //  			});
+ //  			$( 'div' ).slideUp( "slow", function() {
+ //    			$(this).css('transform','translateY(0px)');
+ //  			});
+
+	// 	});
+
+	// });
+
+	$(document).ready(function() {
+		$lastScrollTop=0;
+		$winHeight = $(window).height();
+
+		$(window).scroll(function(){
+			$st= $(this).scrollTop();
+			if($st > $lastScrollTop && $st > 120){
+				//down
+				
+				$('nav').addClass('hidenav');
+			}else{
+				if ($st + $winHeight < $(document).height()) {
+					$('nav').removeClass('hidenav');
+				}
+			}
+
+		});
+	});
+
+	</script>
+</body>
+</html>
