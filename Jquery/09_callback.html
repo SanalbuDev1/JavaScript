@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<style>
+		
+		body{
+			font-family: Arial;
+			background-color: #352A38
+			color:white;
+		}
+		button#btn{
+			display: block;
+			margin:20px auto;
+			width: 160px;
+			outline: none;
+			padding: 10px;
+			transition: all 0.51s ease-in;
+			font-size: 15px;
+		}
+		button#btn:hover{
+			transform: scale(1.05);
+			transition: all 0.51s ease-in;
+
+		}
+		h1{
+			text-align: center;
+			
+		}
+		section#modal{
+			background-color: 	rgba(0,0,0,.5);
+			width: 100%;
+			position:fixed;	
+			left: 0;	
+			top:0;
+			height: 100%;	
+
+		}
+		section#modal article{
+			background-color:  #fff;
+			margin:15% auto;
+			width: 60%;	
+			padding: 20px;	
+			background-color: #BAAAAA;
+			box-shadow: 2px 2px 10px black;
+			position:relative;
+			top:-1000px;
+		}
+		section#modal article h2{
+			text-align: center;
+			text-transform: uppercase;
+		}
+		section#modal article p{
+			text-align: justify;
+				
+		}
+		section#modal article button{
+			background-color: 	#BC2020;
+			color:#fff;
+			display: block;
+			margin:10px auto;
+			padding: 10px;	
+		}
+	</style>
+		
+
+	<section id="modal">
+		<article>
+			<h2>Lorem ipsum dolor.</h2>
+			<p>	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error laborum praesentium sint placeat, earum molestiae maiores nesciunt perferendis aliquid eveniet, saepe est, molestias voluptatibus eius doloribus repellendus! Excepturi a, iste.</p>
+			<button id="btn2">&times; Cerrar ventana modal</button>
+		</article>
+	</section>
+	<h1>CallBack</h1>
+	<hr>
+	<button id="btn"  >Abrir ventana modal</button>
+
+	<script src="js/jquery-3.1.1.js">
+		
+	</script>
+	<script>
+
+		$(document).ready(function() {
+			$('#modal').hide();
+			$('#modal article').hide();
+			$('#btn').click(function(event){
+				$('#modal').fadeIn('slow', function(event) {
+					$('#modal article').show();
+					$('#modal article').animate({top:"0px"}, 500)
+				});
+			});
+			$('#modal article button').click(function(event){
+				$('#modal').hide();
+			});
+
+			$('#modal article button , #modal article button').click(function(event){
+					$('#modal').show();
+				$('#modal article').animate({top:"-1000px"}, 500 ,function(){
+					
+					$('#modal').fadeOut('slow');	
+				})
+			});
+		});
+			
+
+
+
+	</script>
+</body>
+</html>

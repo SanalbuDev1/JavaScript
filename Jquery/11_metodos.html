@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Metodo get</h1>
+	<h1>text()</h1>
+	<p id="text">Lorem ipsum dolor.</p>
+	<input type="submit" value="submit" id="btn">
+	<hr>
+	
+	<h1>html()</h1>
+	<ul>
+		<li id="li1"></li>
+		<li id="li2"></li>
+		<li id="li3"></li>
+		<li id="li4"></li>
+	</ul>
+	<input type="submit" value="submit" id="btn2">
+	<hr>
+	<h1>val()</h1>
+
+
+	
+
+	
+	
+
+	<a id="enl" href="www.google.com"></a>
+	<br><br>
+	<input type="submit" value="submit" id="btn4">
+	<hr>
+	<br><br>
+
+	<h1>attr()</h1>
+	<input type="text" value="jeremias" id="jer">
+
+	<input type="submit" value="submit" id="btn3">
+	<hr>
+	<h1>metodo Set</h1>
+	<br>
+	<h1>text - set</h1>
+	<h1 id="text1">Hola mundo</h1>
+	<input id="btns1" type="submit" value="text(set)">
+	<hr>
+
+	<h1>html - set</h1>
+	<ul id="lista"></ul>
+	<input type="submit" value="html(set)" id="btns2">
+	<hr>
+
+	<h1>val(set)</h1>
+	<input type="text" value="jeremias" id="val1">
+	<input type="submit" value="val()" id="btns3">
+
+	<hr>
+	</h1>
+	<h1>attr() - set</h1>
+	<a href="" id="a1">soy un enlaze</a>
+	<input type="submit" value="attr()" id="btns4">
+
+	<script src="js/jquery-3.1.1.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('#btn').click(function(event) {
+				$texto=$('#text').text();
+				alert($texto);
+			});
+	 
+				
+				 $('#btn2').click(function(){ 				
+				 				 	
+					$html=$('ul li').html();
+				 	$('ul li:first').text('colombia');
+				 	$('ul li:nth-child(2)').text('peru');
+				 	$('ul li:nth-child(3)').text('Bolivia');
+				 	$('ul li:nth-child(4)').text('Argentina');
+
+
+				
+				 	
+			})
+
+				 $('#btn3').click(function(event) {
+				 	$val=$('#jer').val();
+				 	alert($val);
+				 });
+
+				 $('#btn4').click(function(event) {
+				 	$attr=$('#enl').attr("href");
+				 	alert($attr);
+				 });
+
+				 $('#btns1').click(function(event) {
+				 	$var=prompt('valor al h1');
+				 	$('#text1').text($var);
+				 });
+
+				 $('#btns2').click(function(event) {
+				 	$('#lista').html('<li>colombia</li><li>peru</li><li>bolivia</li><li>argentina</li>');
+				 });
+
+				 $('#btns3').click(function(event){
+				 	$val= prompt('Escriba texto');
+				 	$('#val1').val($val);
+				 })
+				 $('#btns4').click(function(event) {
+				 	$('#a1').attr("href","http://www.youtube.com");
+				 });
+
+		});
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>	</title>
+</head>
+<body>
+	<style>
+		body{
+			background-color: #242424;
+			color:#fff;
+			font-family: Comic;
+
+			
+			
+		}
+		h1{
+			text-align: center;
+			
+		}
+		hr{
+			border:1px solid #fff;
+			margin-bottom: 30px;
+		}
+		section#slider{
+			box-shadow: 0px 0px 20px 2px #000;
+			height: 400px;
+			margin:20px auto;
+			width: 800px;
+			overflow: hidden;
+		}
+		div.slider{
+			position:relative;
+			width: 2400px;
+		}
+		div.slider img:nth-child(2){
+			margin-left: -4px;
+		}
+		div.slider img:nth-child(3){
+			margin-left: -4px;
+		}
+		div.control{
+			position: absolute;
+			top:290px;
+			z-index: 1;
+		}
+		div.control button{
+			padding: 20px;	
+			background-color: 	rgba(0,0,0,0.2);
+			transition: :all 0.6s ease-in;
+			font-size: 1.2em;
+			border:none;
+			position: absolute;
+			
+		}
+		div.control button{
+			transition: :all 0.6s ease-in;
+						transform: scale(1.1);
+		}
+		div.control button#btnright{
+			right: -800px;	
+		}
+	</style>
+	<h1>Encadenamiento JQuery</h1>
+	<hr>
+		<section id="slider">
+			<div class="slider">
+					<img src="imgs/pok1.jpg	" width="800px" height="400px">
+					<img src="imgs/pok2.jpg	" width="800px" height="400px">
+					<img src="imgs/pok3.jpg	" width="800px" height="400px">
+			</div>
+			<div class="control">	
+					<button id="btnleft">	&#x276e;</button>
+					<button id="btnright">	&#x276f;</button>
+
+			</div>
+		</section>
+	
+	<script src="js/jquery-3.1.1.js"></script>
+	<script>
+		$(document).ready(function() {
+			$pos=0;
+			$('#btnright').click(function(event) {
+			
+			if($pos > -1600){
+				$pos -=800;
+				$('.slider').animate({left: $pos+'px'}, 500)
+			}	
+				
+			});
+		
+			$('#btnleft').click(function(event) {
+			
+			if($pos < 0){
+				$pos +=800;
+				$('.slider').animate({left: $pos+'px'}, 500)
+			}	
+				
+			});
+		});
+	</script>
+</body>
+</html>
