@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>	</title>
+</head>
+<body>
+<style>	
+
+	body{
+		text-align: center;
+	}
+	section{
+		background-color: 	#00FF00;
+		border: 10px solid:  #0f4448;
+		height: 350px;	
+		padding: 20px;	
+		margin: 0px auto;
+		width: 800px;		
+	}
+
+
+</style>
+	<h1>Dimensiones JQuery</h1>
+	<hr>	
+	<section></section>
+	<button id="btn1">Mostrar Dimensiones (Sin relleno y bordes)</button>
+	<button id="btn2">Mostrar Dimensiones (con relleno y sin bordes)</button>
+	<button id="btn3">Mostrar Dimensiones (con relleno y con bordes)</button>
+	
+	<script src="js/jquery-3.1.1.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('#btn1').click(function(event) {
+				
+ 				var txt = "";
+ 				txt += "Ancho: " + $("section").width() + "</br>";
+ 				txt += "Alto: " + $("section").height();
+ 				$("section").html(txt);
+			});
+			$("#btn2").click(function(){
+				var txt = "";
+ 				txt += "Ancho: " + $("section").innerWidth() + "</br>";
+ 				txt += "Alto: " + $("section").innerHeight();
+ 				$("section").html(txt);
+				});
+			$("#btn3").click(function(){
+				var txt = "";
+ 				txt += "Ancho: " + $("section").outerWidth()  + "</br>";
+ 				txt += "Alto: " + $("section").outerHeight() ;
+ 				$("section").html(txt);
+				});
+		});
+	</script>
+
+</body>
+</html>

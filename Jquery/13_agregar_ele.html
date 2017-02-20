@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1>ageegar elemento</h1>
+	<hr>
+	<h2>append / preppend</h2>
+	<input type="text" id="ciudad">
+	<select name="" id="pos">
+		<option value="">selecione</option>
+		<option value="posi">inicio</option>
+		<option value="posf">final</option>
+	</select>
+	<button id="btnADD">ingresar</button>
+	<ul id="ciudades"></ul>
+
+	<h2>after / before</h2>
+	<textarea name="" id="codigo" cols="30" rows="10"></textarea>
+	<select name="" id="poscod">
+		<option value=""></option>
+		<option value="posci">inicio</option>
+		<option value="poscf">final</option>
+	</select>
+	<button id="btnADD1">agregar</button>
+	<ul id="deportes">
+		<li>futbol</li>
+		<li>baloncesto</li>
+		<li>tennis</li>
+		<li>biesbol</li>
+	</ul>
+
+
+	<script src="js/jquery-3.1.1.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('#btnADD').click(function(event) {
+				$city = $('#ciudad').val();
+				$posi = $('#pos').val();
+				if ($city.length > 0 && $posi.length > 0 ) {
+					if ($posi == 'posi	') {
+						$('#ciudades').prepend('<li>'+$city+'</li>');
+					}else{
+						$('#ciudades').append('<li>'+$city+'</li>');
+					}
+					$('#ciudad').val('');
+				}else{
+					alert('debe ingresar datos');
+				}
+			});
+			$('#btnADD1').click(function(event) {
+				$text1=$('#codigo').val();
+				$select1=$('#poscod').val();
+				if($text1.length >0 && $select1.length >0){
+					if($select1 == 'posci'){
+						$('#deportes').before($text1);
+						
+
+					}else{
+						$('#deportes').after($text1);
+					}
+					$('#codigo').val('');
+
+				}else{
+					alert('debe ingresar los campos');
+				}
+			});
+		});
+
+
+
+	</script>
+</body>
+</html>

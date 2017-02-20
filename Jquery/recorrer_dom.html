@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/animate.css">
+	<style>
+		body{
+			font-family: Tahoma;
+			background: radial-gradient(#00D2FF,white,#00D2FF);
+			height: 1000px;
+		}
+		section{
+			margin:120px auto;
+			width: 1000px;
+			padding: 20px;
+			background-color: rgba(0,0,255,0.3);
+		}
+		ul{
+			list-style: none;
+			padding: 0px;
+
+		}
+		ul li{
+			
+			background-repeat: no-repeat;
+			background-size: cover;
+			display: inline-block;
+			border-radius:50%;
+			height: 140px;
+			width: 140px;
+			padding: 10px;	
+		}
+		ul li:nth-child(1){
+			background: url(imgs/annie.jpg) center center;
+
+		}
+		ul li:nth-child(2){
+			background: url(imgs/garen.jpg) center center;
+		}
+		ul li:nth-child(3){
+			background: url(imgs/nasus.jpg) center center;
+		}
+		ul li:nth-child(4){
+			background: url(imgs/shaco.jpg) center center;
+		}
+		ul li:nth-child(5){
+			background: url(imgs/yasuo.jpg) center center;
+		}
+		ul li:nth-child(6){
+			background: url(imgs/annie.jpg) center center;
+		}
+		.actived{
+			border:4px solid white;
+		}
+		nav{
+			text-align: center;
+				
+		}
+
+	</style>
+</head>
+<body>
+	<h1>Recorrer Dom JQuery</h1>
+	<hr>
+	<section>
+		<ul>
+			
+			<li class="animated "></li>
+			
+			<li class="animated"></li>
+			
+			<li class="animated"></li>
+			
+			<li class="animated"></li>
+			
+			<li class="animated"></li>
+			
+			<li class="animated"></li>
+		</ul>
+	<nav>
+		<button id="btnFirst">primero</button>
+		<button id="btnPrev">anterior</button>
+		<button id="btnNext">Siguiente</button>
+		<button id="btnLast">ultimo</button>
+	</nav>
+	</section>
+	
+
+	<script src="js/jquery-3.1.1.js"></script>
+	<script>
+		$(document).ready(function() {
+			$fx='rubberBand';
+			$('ul li:first').addClass('actived '+$fx);
+
+			$('#btnNext').click(function(event) {
+				$actual= $('li.actived');
+	
+				
+
+				
+				if ($('li:last').hasClass('actived')) {
+					$('li.actived').removeClass('actived '+$fx);
+					$('ul li').first().addClass('actived '+$fx);
+				}else{
+					$('li.actived').removeClass('actived '+$fx);
+					$($actual		).next().addClass('actived '+$fx);
+				}
+				
+			});
+			$('#btnPrev').click(function(event) {
+				$actual= $('li.actived');
+	
+				
+
+				
+				if ($('li:first').hasClass('actived')) {
+					$('li.actived').removeClass('actived '+$fx);
+					$('ul li').last().addClass('actived '+$fx);
+				}else{
+					$('li.actived').removeClass('actived '+$fx);
+					$($actual).prev().addClass('actived '+$fx);
+				}
+				
+			});
+			$('#btnFirst').click(function(event) {
+				$('li.actived').removeClass('actived '+$fx);
+				$('ul li').first().addClass	('actived '+$fx);
+
+			});
+			$('#btnLast').click(function(event) {
+				$('li.actived').removeClass('actived '+$fx);
+				$('ul li').last().addClass	('actived '+$fx);
+
+			});
+		});
+	</script>
+</body>
+</html>

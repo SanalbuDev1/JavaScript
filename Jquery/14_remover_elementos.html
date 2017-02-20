@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<style>
+		body{
+			margin:0;
+			padding: 0;
+		}
+		ul{
+			margin:120px auto;
+			width: 20%;
+			height: 400px;
+			background-color: orange;
+			text-align: center;
+			list-style: none;
+		}
+		ul li{
+			border:1px solid black;
+			padding: 10px;
+			background-color: #FFF600;
+			width: 80%;
+			margin-bottom: 2px;
+		}
+	</style>
+	<h1>remover elementos JQuery</h1>
+	<hr>
+	<ul id="tareas">
+		<li><button>&times;</button>Ir al Sena</li>
+		<li><button>&times;</button>Ir al Sena</li>
+		<li><button>&times;</button>Ir al Sena</li>
+		<li><button>&times;</button>Ir al Sena</li>
+		<li><button>&times;</button>Ir al Sena</li>
+		<li><button>&times;</button>Ir al Sena</li>
+		<li><button>&times;</button>Ir al Sena</li>
+		<li><button>&times;</button>Ir al Sena</li>
+		<li><button>&times;</button>Ir al Sena</li>
+	</ul>
+	<button id="vaciar"> Eliminar todas las tareas</button>
+
+	<script src="js/jquery-3.1.1.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('ul#tareas li button').click(function(event) {
+				$(this).parent().remove();
+			});
+			$('#vaciar').click(function(event) {
+				$('#tareas').remove();
+			});
+		});
+	</script>
+</body>
+</html>
