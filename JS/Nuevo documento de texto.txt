@@ -1,0 +1,11 @@
+dir
+npm init
+main.js
+set http_prxo= "No se coloca nada si no tiene proxy"
+set http_proxy=http://proxy2.sena.edu.co:80
+npm install electron --save-dev
+node install.js
+pdw
+npm start
+npm install electron-packager --save-dev
+npm run build

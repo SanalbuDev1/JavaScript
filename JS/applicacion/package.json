@@ -1,0 +1,16 @@
+{
+ "name": "calculadora",
+ "version": "1.0.0",
+ "description": "Un vehiculo muy bueno.",
+ "main": "main.js",
+ "scripts": {
+   "start": "electron main.js",
+   "build": "electron-packager . Fast and Furious "
+ },
+ "author": "Santiago Alvarez Buitrago",
+ "license": "ISC",
+ "devDependencies": {
+   "electron": "^1.4.15",
+   "electron-packager": "^8.5.2"
+ }
+}
